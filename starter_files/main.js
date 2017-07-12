@@ -1,7 +1,13 @@
 function companyDirectory(thing) {
 
-  let title = `<h1>Internal Company Directory</h1>`;
-  document.body.innerHTML = title;
+let header = document.createElement("h1");
+let body = document.querySelector("body");
+header.textContent = "Internal Company Directory";
+body.appendChild(header);
+let container = document.createElement("div");
+container.id = "container";
+body.appendChild(container);
+
   let employeeProfile = "";
   for (let i = 0; i < customers.results.length; i++) {
     employeeProfile += `
@@ -26,7 +32,7 @@ function companyDirectory(thing) {
     </div>
   `;
 
-  document.body.innerHTML += employeeProfile;
+  container.innerHTML = employeeProfile;
   }
 }
 
