@@ -1,5 +1,7 @@
 function companyDirectory(thing) {
-  
+
+  let title = `<h1>Internal Company Directory</h1>`;
+  document.body.innerHTML = title;
   let employeeProfile = "";
   for (let i = 0; i < customers.results.length; i++) {
     employeeProfile += `
@@ -24,7 +26,7 @@ function companyDirectory(thing) {
     </div>
   `;
 
-  document.body.innerHTML = employeeProfile;
+  document.body.innerHTML += employeeProfile;
   }
 }
 
