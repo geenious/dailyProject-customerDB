@@ -2,32 +2,33 @@ function companyDirectory(thing) {
 
 let header = document.createElement("h1");
 let body = document.querySelector("body");
-header.textContent = "Internal Company Directory";
-body.appendChild(header);
 let container = document.createElement("div");
+header.textContent = "Internal Company Directory";
 container.id = "container";
+body.appendChild(header);
 body.appendChild(container);
 
   let employeeProfile = "";
   for (let i = 0; i < customers.results.length; i++) {
+    let employee = customers.results[i];
     employeeProfile += `
     <div id="employee">
-      <img id="headshot" src=${customers.results[i].picture.large}>
+      <img id="headshot" src=${employee.picture.large}>
       <div id="name">
-        ${customers.results[i].name.first} ${customers.results[i].name.last}
+        ${employee.name.first} ${employee.name.last}
       </div>
       <div id="email">
-        ${customers.results[i].email}
+        ${employee.email}
       </div>
       <div id="address">
-        ${customers.results[i].location.street}<br>
-        ${customers.results[i].location.city}, ${customers.results[i].location.state} ${customers.results[i].location.postcode}
+        ${employee.location.street}<br>
+        ${employee.location.city}, ${employee.location.state} ${employee.location.postcode}
       </div>
       <div id="phone">
-        ${customers.results[i].phone}
+        ${employee.phone}
       </div>
       <div id="ssn">
-        ${customers.results[i].id.value}
+        ${employee.id.value}
       </div>
     </div>
   `;
